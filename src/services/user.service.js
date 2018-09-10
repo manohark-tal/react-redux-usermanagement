@@ -1,10 +1,10 @@
 import userList from "./user.data";
-console.log(userList);
+//console.log(userList);
 var addUser = user => {
   var check = userList.find(o => o.email === user.email);
   if (check) return null;
   userList.push(user);
-  console.log(userList)
+ // console.log(userList)
   return user;
 };
 

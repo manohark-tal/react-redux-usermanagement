@@ -12,7 +12,7 @@ const loginFailed = error => ({
 });
 
 const loginSuccessful = user => {
-  console.log(user);
+  //console.log(user);
   return {
     type: actions.LOGIN_SUCCESS,
     user

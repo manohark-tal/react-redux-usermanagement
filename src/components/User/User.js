@@ -8,15 +8,15 @@ const User = props => {
           props.editUserRequest(props.user)
       }}>
         <span className="icon has-text-black	">
-          <i className="fas fa-user-edit" />
+          <i className="fas fa-user-edit" title="edit"/>
         </span>
       </a>
       <a onClick={e=>{
           e.preventDefault()
           props.deleteUser(props.user)
       }}>
-        <span className="icon has-text-black	">
-          <i className="fas fa-user-minus" />
+        <span className="icon has-text-black">
+          <i className="fas fa-user-minus" title="remove"/>
         </span>
       </a>
     </td>

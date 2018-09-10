@@ -6,7 +6,7 @@ import LoginForm from "./LoginForm";
 import UserTable from "./User/UserTable";
 
 const HomePage = props => {
-  console.log(props);
+ // console.log(props);
   let content = props.loggedIn ? (
     <div>
       <UserTable />
