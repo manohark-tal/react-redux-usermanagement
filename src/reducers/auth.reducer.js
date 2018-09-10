@@ -23,6 +23,8 @@ export default function(state = auth, action) {
     case actions.LOGIN_FAILURE:
       return state;
 
+    case actions.LOGOUT:
+      return auth;
     default:
       return state;
   }

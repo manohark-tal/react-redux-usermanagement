@@ -12,10 +12,21 @@ const loginFailed = error => ({
 });
 
 const loginSuccessful = user => {
-    console.log(user)
+  console.log(user);
   return {
     type: actions.LOGIN_SUCCESS,
     user
+  };
+};
+const fetchUsers = users => {
+  return {
+    type: actions.FETCH_USERS,
+    users
+  }
+};
+const logout = () => {
+  return {
+    type: actions.LOGOUT
   };
 };
 export const loginUser = (username, password) => dispatch => {
@@ -26,5 +37,10 @@ export const loginUser = (username, password) => dispatch => {
     dispatch(loginFailed("Wrong Credentials"));
   } else {
     dispatch(loginSuccessful(user));
+    dispatch(fetchUsers(UserSerive.getAllUsers()));
   }
+};
+export const logoutUser = () => dispatch => {
+  dispatch(logout());
+  dispatch(push("/"))
 };

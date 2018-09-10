@@ -9,10 +9,12 @@ var addUser = user => {
 };
 
 var removeUser =email => {
+  //console.log('delete request for',email)
   var index = userList.findIndex(o => o.email === email);
   if (index<0) return null;
   var user={...userList[index]}
   userList.splice(index, 1);
+  console.log(userList)
   return user;
 };
 var getUser = (email, password) => {
@@ -31,16 +33,15 @@ var getUser = (email, password) => {
 var editUser = (user, newUser) => {
   var index = userList.findIndex(o => o.email === user.email);
   if (index<0) return null;
-  var old=userList[index];
   userList[index]={...newUser};
-  userList[index].password=old.password
-  console.log(userList)
   return user;
 };
+var getAllUsers=()=>userList
 var UserService= {
     addUser,
     removeUser,
     editUser,
-    getUser
+    getUser,
+    getAllUsers
   };
 export default UserService;

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { loginUser } from "../actions/auth.actions";
 
 class LoginForm extends Component {
   constructor(props) {
@@ -18,9 +17,10 @@ class LoginForm extends Component {
   };
   render() {
     return (
-      <form>
+      <form className="form-horizontal login-form">
         <div className="field">
-          <p className="control has-icons-left has-icons-right">
+          <label className="label">Email</label>
+          <div className="control">
             <input
               className="input"
               type="email"
@@ -28,16 +28,11 @@ class LoginForm extends Component {
               name="email"
               onChange={this.onChangeHandler}
             />
-            <span className="icon is-small is-left">
-              <i className="fas fa-envelope" />
-            </span>
-            <span className="icon is-small is-right">
-              <i className="fas fa-check" />
-            </span>
-          </p>
+          </div>
         </div>
         <div className="field">
-          <p className="control has-icons-left">
+          <label className="label">Password</label>
+          <div className="control">
             <input
               className="input"
               type="password"
@@ -45,21 +40,17 @@ class LoginForm extends Component {
               onChange={this.onChangeHandler}
               name="password"
             />
-            <span className="icon is-small is-left">
-              <i className="fas fa-lock" />
-            </span>
-          </p>
+          </div>
         </div>
+
         <div className="field">
-          <p className="control">
-            <button
-              className="button is-success"
-              type="submit"
-              onClick={this.formSubmit}
-            >
-              Login
-            </button>
-          </p>
+          <button
+            className="button is-success"
+            type="submit"
+            onClick={this.formSubmit}
+          >
+            Login
+          </button>
         </div>
       </form>
     );
